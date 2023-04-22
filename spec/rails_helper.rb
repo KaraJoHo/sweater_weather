@@ -66,8 +66,8 @@ RSpec.configure do |config|
   VCR.configure do |config|
     config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
     config.hook_into :webmock
-    # config.filter_sensitive_data('<NREL_KEY>') { ENV["NREL_KEY"] }
-    # config.filter_sensitive_data('<MAPQUEST_KEY>') { ENV["MAPQUEST_KEY"] }
+    config.filter_sensitive_data('<WEATHER_KEY>') { ENV["WEATHER_KEY"] }
+    config.filter_sensitive_data('<MAPQUEST_KEY>') { ENV["MAPQUEST_KEY"] }
     config.configure_rspec_metadata!
   end
 end
