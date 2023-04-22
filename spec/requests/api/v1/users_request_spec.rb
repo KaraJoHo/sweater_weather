@@ -71,4 +71,57 @@ RSpec.describe "Users" do
       
     end
   end
+
+  describe "sessions" do 
+    it "can log a user in/create a session" do 
+      user = User.create!(email: "whatever@example.com", password: "password1", password_confirmation: "password1")
+      
+      request_body = {email: "whatever@example.com", password: "password1"}
+      headers = {"CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
+
+      post "/api/v1/sessions", headers: headers, params: JSON.generate(request_body)
+
+      expect(response).to be_successful
+
+      session = JSON.parse(response.body, symbolize_names: true)
+
+      expect(session).to have_key(:data)
+      expect(session[:data].keys).to match_array([:type, :id, :attributes])
+      expect(session[:data][:attributes].keys).to eq([:email, :api_key])
+    end
+
+    it "raises an error if email is incorrect" do 
+      user = User.create!(email: "whatever@example.com", password: "password1", password_confirmation: "password1")
+      
+      request_body = {email: "what@example.com", password: "password1"}
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post "/api/v1/sessions", headers: headers, params: JSON.generate(request_body)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      session = JSON.parse(response.body, symbolize_names: true)
+     
+      expect(session.keys).to eq([:title, :errors])
+      expect(session[:errors]).to eq(["Invalid entry"])
+    end
+
+    it "raises an error is the password is incorrect" do 
+      user = User.create!(email: "whatever@example.com", password: "password1", password_confirmation: "password1")
+      
+      request_body = {email: "whatever@example.com", password: "passwrong"}
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post "/api/v1/sessions", headers: headers, params: JSON.generate(request_body)
+
+      expect(response).to_not be_successful
+      expect(response.status)
+
+      session = JSON.parse(response.body, symbolize_names: true)
+
+      expect(session.keys).to eq([:title, :errors])
+      expect(session[:errors]).to eq(["Invalid entry"])
+    end
+  end
 end
