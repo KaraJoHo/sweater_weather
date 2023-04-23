@@ -5,4 +5,8 @@ class User < ApplicationRecord
   validates :password, confirmation: true
 
   has_secure_password
+
+  def self.all_keys 
+    pluck(:api_key)
+  end
 end

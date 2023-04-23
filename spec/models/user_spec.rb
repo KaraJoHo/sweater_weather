@@ -23,4 +23,12 @@ RSpec.describe User do
       expect(user.password_confirmation).to_not eq("password")
     end
   end
+
+  describe "class methods" do 
+    it "is a list of all api keys" do 
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "123")
+      user = User.create!(email: "userrr@email.com", password: "passed", api_key: "777")
+      expect(User.all_keys).to eq(["123", "777"])
+    end
+  end
 end

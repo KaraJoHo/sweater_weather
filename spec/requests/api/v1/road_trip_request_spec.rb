@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "Road Trip Request" do 
   describe "Creating a road trip", :vcr do 
     it "has road trip duration and weather at destination for multiday trip" do 
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
       request_body = {
                       "origin": "New York, NY",
                       "destination": "Los Angeles, CA",
@@ -33,6 +34,7 @@ RSpec.describe "Road Trip Request" do
     end
 
     it "has road trip duration and weather at destination for a less than 24 hour trip" do
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
       request_body = {
                       "origin": "Cincinatti,OH",
                       "destination": "Chicago,IL",
@@ -63,6 +65,7 @@ RSpec.describe "Road Trip Request" do
     end
 
     it "does not have weather info for an impossible road trip" do 
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
       request_body = {
                       "origin": "Cincinatti,OH",
                       "destination": "London, UK",
@@ -77,6 +80,42 @@ RSpec.describe "Road Trip Request" do
 
       expect(road_trip[:data][:attributes][:travel_time]).to eq("impossible")
       expect(road_trip[:data][:attributes][:weather_at_eta]).to eq({})
+    end
+
+    it "renders an error if no api key is given" do 
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "123")
+      request_body = {
+                      "origin": "Cincinatti,OH",
+                      "destination": "Denver,CO"
+                    }
+      headers = {"CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
+      post "/api/v1/road_trip", headers: headers, params: JSON.generate(request_body)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error[:errors]).to eq(["Key is incorrect or not present"])
+    end
+
+    it "renders an error message if the api key is incorrect" do 
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "123")
+      user = User.create!(email: "userrr@email.com", password: "passed", api_key: "777")
+      request_body = {
+                      "origin": "Cincinatti,OH",
+                      "destination": "Denver,CO",
+                      "api_key": "456"
+                    }
+      headers = {"CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
+      post "/api/v1/road_trip", headers: headers, params: JSON.generate(request_body)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error[:errors]).to eq(["Key is incorrect or not present"])
     end
   end
 end
