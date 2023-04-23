@@ -21,5 +21,13 @@ RSpec.describe MapquestService do
       expect(geo_call[:results][0][:locations][0][:latLng]).to be_a(Hash)
       expect(geo_call[:results][0][:locations][0][:latLng].keys).to eq([:lat, :lng])
     end
+
+    it "has a route call" do 
+      route = @service.trip("Denver,CO", "Boulder,CO")
+      expect(route).to be_a(Hash)
+      expect(route.keys).to eq([:route, :info])
+      expect(route[:route]).to have_key(:distance)
+      expect(route[:route]).to have_key(:formattedTime)
+    end
   end
 end
