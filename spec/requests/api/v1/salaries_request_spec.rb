@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Salaries Request" do 
-  describe "Get salaries for a destination" do 
+  describe "Get salaries for a destination", :vcr do 
     it "is a list of tech salaries for a given destination, along with the current forecast" do
       get "/api/v1/salaries?destination=denver"
 
