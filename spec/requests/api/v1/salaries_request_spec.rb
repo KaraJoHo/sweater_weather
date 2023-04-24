@@ -54,5 +54,15 @@ RSpec.describe "Salaries Request" do
       expect(salary_info[:data][:attributes][:salaries].first[:min]).to be_a(String)
       expect(salary_info[:data][:attributes][:salaries].first[:max]).to be_a(String)
     end
+
+    it "SAD PATH: renders an error is no location is given" do 
+      get "/api/v1/salaries?destination="
+
+      expect(response).to_not be_successful 
+      expect(response.status).to eq(400)
+
+      error_info = JSON.parse(response.body, symbolize_names: true)
+      expect(error_info[:errors]).to eq(["No location provided"])
+    end
   end
 end
