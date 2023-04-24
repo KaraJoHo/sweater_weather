@@ -12,9 +12,11 @@ class SalariesFacade
     forecast = {"summary": weather_for_destination[:current][:condition][:text], "temperature": "#{weather_for_destination[:current][:temp_f].to_i} F"} 
    
 
-    conn = Faraday.new(url: "https://api.teleport.org")
-    urban_city_response = conn.get("/api/urban_areas/slug:#{@destination}/salaries")
-    parsed =JSON.parse(urban_city_response.body, symbolize_names: true)
+    # conn = Faraday.new(url: "https://api.teleport.org")
+    # urban_city_response = conn.get("/api/urban_areas/slug:#{@destination}/salaries")
+    # parsed =JSON.parse(urban_city_response.body, symbolize_names: true)
+
+    parsed = salaries_service.salaries_for_destination(@destination)
 
     tech_jobs = ["DATA-ANALYST", "DATA-SCIENTIST", "MOBILE-DEVELOPER", "QA-ENGINEER", "SOFTWARE-ENGINEER", "SYSTEMS-ADMINISTRATOR", "WEB-DEVELOPER"]
    
@@ -37,5 +39,9 @@ class SalariesFacade
     forecast_info_destination = ForecastFacade.new(@destination) 
     lat_long = forecast_info_destination.lat_long
     WeatherService.new.fetch_forecast_for_given_location(lat_long.latitude, lat_long.longitude)
+  end
+
+  def salaries_service 
+    @salaries_service ||= SalariesService.new
   end
 end
