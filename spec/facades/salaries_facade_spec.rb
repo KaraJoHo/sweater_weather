@@ -58,5 +58,9 @@ RSpec.describe SalariesFacade do
       expect(created_salary_objects.first.min).to eq("$123.46")
       expect(created_salary_objects.first.max).to eq("$567.89")
     end
+
+    it "has a salaries service" do 
+      expect(@facade.salaries_service).to be_a(SalariesService)
+    end
   end
 end
