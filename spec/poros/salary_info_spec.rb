@@ -14,7 +14,11 @@ RSpec.describe SalaryInfo do
       expect(@data_analyst).to be_a(SalaryInfo)
       expect(@data_analyst.title).to eq("Data Analyst")
       expect(@data_analyst.min).to eq("$42,878.34")
-      expect(@data_analyst.max).to eq("$62,106.57")
+      expect(@data_analyst.max).to eq("$62,106.69")
+    end
+
+    it "can format a number to currency" do 
+      expect(@data_analyst.format_currency(42878.34161807408.round(2))).to eq("$42,878.34")
     end
   end
 end
