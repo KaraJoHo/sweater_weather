@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 24 Apr 2023 16:29:48 GMT
+      - Mon, 24 Apr 2023 16:48:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -29,17 +29,17 @@ http_interactions:
       X-Ratelimit-Limit-2628000:
       - '15000'
       X-Ratelimit-Remaining-2628000:
-      - '14143'
+      - '13941'
       Ratelimit-Limit:
       - '15000'
       Ratelimit-Remaining:
-      - '14143'
+      - '13941'
       Ratelimit-Reset:
-      - '2194212'
+      - '2193088'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - 3aa631e0-e2bd-11ed-b258-fd743e58744d
+      - d8818070-e2bf-11ed-aa3c-cb240186020f
       Access-Control-Allow-Origin:
       - "*"
       X-Transaction-Count:
@@ -50,7 +50,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiJhdXN0aW4ifSwibG9jYXRpb25zIjpbeyJzdHJlZXQiOiIiLCJhZG1pbkFyZWE2IjoiIiwiYWRtaW5BcmVhNlR5cGUiOiJOZWlnaGJvcmhvb2QiLCJhZG1pbkFyZWE1IjoiQXVzdGluIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiYWRtaW5BcmVhNCI6IlRyYXZpcyIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwiYWRtaW5BcmVhMyI6IlRYIiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsInBvc3RhbENvZGUiOiIiLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJBNVhBWCIsImdlb2NvZGVRdWFsaXR5IjoiQ0lUWSIsImRyYWdQb2ludCI6ZmFsc2UsInNpZGVPZlN0cmVldCI6Ik4iLCJsaW5rSWQiOiIwIiwidW5rbm93bklucHV0IjoiIiwidHlwZSI6InMiLCJsYXRMbmciOnsibGF0IjozMC4yNjc1OSwibG5nIjotOTcuNzQyOTl9LCJkaXNwbGF5TGF0TG5nIjp7ImxhdCI6MzAuMjY3NTksImxuZyI6LTk3Ljc0Mjk5fSwibWFwVXJsIjoiIn1dfV19
-  recorded_at: Mon, 24 Apr 2023 16:29:48 GMT
+  recorded_at: Mon, 24 Apr 2023 16:48:32 GMT
 - request:
     method: get
     uri: http://api.weatherapi.com/v1/forecast.json?days=5&key=<WEATHER_KEY>&q=30.26759,-97.74299
@@ -70,7 +70,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 24 Apr 2023 16:29:48 GMT
+      - Mon, 24 Apr 2023 16:48:32 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -80,7 +80,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Server:
-      - BunnyCDN-IL1-940
+      - BunnyCDN-IL1-1068
       Cdn-Pullzone:
       - '93447'
       Cdn-Uid:
@@ -96,21 +96,21 @@ http_interactions:
       Cdn-Requestpullcode:
       - '200'
       Cdn-Cachedat:
-      - 04/24/2023 16:29:24
+      - 04/24/2023 16:47:22
       Cdn-Edgestorageid:
       - '940'
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - 2839a432cac55e63594873523479465c
+      - 34e96a6339c082b13d2b6d2f222c5c9a
       Cdn-Cache:
       - HIT
     body:
       encoding: ASCII-8BIT
       string: '{"location":{"name":"Austin","region":"Texas","country":"United States
-        of America","lat":30.27,"lon":-97.74,"tz_id":"America/Chicago","localtime_epoch":1682353764,"localtime":"2023-04-24
-        11:29"},"current":{"last_updated_epoch":1682352900,"last_updated":"2023-04-24
-        11:15","temp_c":12.8,"temp_f":55.0,"is_day":1,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/day/122.png","code":1009},"wind_mph":4.3,"wind_kph":6.8,"wind_degree":360,"wind_dir":"N","pressure_mb":1020.0,"pressure_in":30.13,"precip_mm":0.0,"precip_in":0.0,"humidity":83,"cloud":100,"feelslike_c":11.8,"feelslike_f":53.3,"vis_km":16.0,"vis_miles":9.0,"uv":3.0,"gust_mph":8.1,"gust_kph":13.0},"forecast":{"forecastday":[{"date":"2023-04-24","date_epoch":1682294400,"day":{"maxtemp_c":21.5,"maxtemp_f":70.7,"mintemp_c":11.5,"mintemp_f":52.7,"avgtemp_c":15.4,"avgtemp_f":59.7,"maxwind_mph":10.5,"maxwind_kph":16.9,"totalprecip_mm":0.1,"totalprecip_in":0.0,"totalsnow_cm":0.0,"avgvis_km":10.0,"avgvis_miles":6.0,"avghumidity":73.0,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/day/122.png","code":1009},"uv":4.0},"astro":{"sunrise":"06:54
+        of America","lat":30.27,"lon":-97.74,"tz_id":"America/Chicago","localtime_epoch":1682354842,"localtime":"2023-04-24
+        11:47"},"current":{"last_updated_epoch":1682354700,"last_updated":"2023-04-24
+        11:45","temp_c":12.8,"temp_f":55.0,"is_day":1,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/day/122.png","code":1009},"wind_mph":4.3,"wind_kph":6.8,"wind_degree":360,"wind_dir":"N","pressure_mb":1020.0,"pressure_in":30.13,"precip_mm":0.0,"precip_in":0.0,"humidity":83,"cloud":100,"feelslike_c":11.8,"feelslike_f":53.3,"vis_km":16.0,"vis_miles":9.0,"uv":3.0,"gust_mph":8.1,"gust_kph":13.0},"forecast":{"forecastday":[{"date":"2023-04-24","date_epoch":1682294400,"day":{"maxtemp_c":21.5,"maxtemp_f":70.7,"mintemp_c":11.5,"mintemp_f":52.7,"avgtemp_c":15.4,"avgtemp_f":59.7,"maxwind_mph":10.5,"maxwind_kph":16.9,"totalprecip_mm":0.1,"totalprecip_in":0.0,"totalsnow_cm":0.0,"avgvis_km":10.0,"avgvis_miles":6.0,"avghumidity":73.0,"daily_will_it_rain":0,"daily_chance_of_rain":0,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/day/122.png","code":1009},"uv":4.0},"astro":{"sunrise":"06:54
         AM","sunset":"08:04 PM","moonrise":"10:01 AM","moonset":"No moonset","moon_phase":"Waxing
         Crescent","moon_illumination":"16"},"hour":[{"time_epoch":1682312400,"time":"2023-04-24
         00:00","temp_c":12.6,"temp_f":54.7,"is_day":0,"condition":{"text":"Overcast","icon":"//cdn.weatherapi.com/weather/64x64/night/122.png","code":1009},"wind_mph":9.6,"wind_kph":15.5,"wind_degree":31,"wind_dir":"NNE","pressure_mb":1019.0,"pressure_in":30.09,"precip_mm":0.0,"precip_in":0.0,"humidity":76,"cloud":100,"feelslike_c":11.1,"feelslike_f":52.0,"windchill_c":11.1,"windchill_f":52.0,"heatindex_c":12.6,"heatindex_f":54.7,"dewpoint_c":8.5,"dewpoint_f":47.3,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":12.3,"gust_kph":19.8,"uv":1.0},{"time_epoch":1682316000,"time":"2023-04-24
@@ -281,7 +281,7 @@ http_interactions:
         at times","icon":"//cdn.weatherapi.com/weather/64x64/night/305.png","code":1192},"wind_mph":16.6,"wind_kph":26.6,"wind_degree":356,"wind_dir":"N","pressure_mb":1012.0,"pressure_in":29.88,"precip_mm":12.9,"precip_in":0.51,"humidity":86,"cloud":73,"feelslike_c":15.2,"feelslike_f":59.4,"windchill_c":15.2,"windchill_f":59.4,"heatindex_c":15.2,"heatindex_f":59.4,"dewpoint_c":12.8,"dewpoint_f":55.0,"will_it_rain":0,"chance_of_rain":69,"will_it_snow":0,"chance_of_snow":0,"vis_km":6.0,"vis_miles":3.0,"gust_mph":29.3,"gust_kph":47.2,"uv":1.0},{"time_epoch":1682740800,"time":"2023-04-28
         23:00","temp_c":14.5,"temp_f":58.1,"is_day":0,"condition":{"text":"Heavy rain
         at times","icon":"//cdn.weatherapi.com/weather/64x64/night/305.png","code":1192},"wind_mph":15.9,"wind_kph":25.6,"wind_degree":238,"wind_dir":"WSW","pressure_mb":1013.0,"pressure_in":29.9,"precip_mm":12.7,"precip_in":0.5,"humidity":82,"cloud":74,"feelslike_c":13.9,"feelslike_f":57.0,"windchill_c":13.9,"windchill_f":57.0,"heatindex_c":14.5,"heatindex_f":58.1,"dewpoint_c":11.5,"dewpoint_f":52.7,"will_it_rain":1,"chance_of_rain":72,"will_it_snow":0,"chance_of_snow":0,"vis_km":6.0,"vis_miles":3.0,"gust_mph":28.0,"gust_kph":45.0,"uv":1.0}]}]}}'
-  recorded_at: Mon, 24 Apr 2023 16:29:48 GMT
+  recorded_at: Mon, 24 Apr 2023 16:48:32 GMT
 - request:
     method: get
     uri: https://api.teleport.org/api/urban_areas/slug:austin/salaries
@@ -307,7 +307,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 24 Apr 2023 16:29:24 GMT
+      - Mon, 24 Apr 2023 16:47:22 GMT
       Access-Control-Max-Age:
       - '600'
       Cache-Control:
@@ -321,13 +321,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 627bd3ccf992ce79999b331b1a9d283c.cloudfront.net (CloudFront)
+      - 1.1 f6d641e44b5f98899da25792ac166784.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C1
       X-Amz-Cf-Id:
-      - Ipek0qfH-850EucbPLufh3mZojDAbOKlqdns7mnjDL97ikNq35ynFQ==
+      - 6AsbGfSuIRk5kKRVe7zeVfIe_ZAipI-yH_AODib901lMhrz5p6sc2w==
       Age:
-      - '24'
+      - '70'
     body:
       encoding: ASCII-8BIT
       string: '{"_links":{"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/urban_areas/slug:austin/salaries/"}},"salaries":[{"job":{"id":"ACCOUNT-MANAGER","title":"Account
@@ -369,5 +369,5 @@ http_interactions:
         Designer"},"salary_percentiles":{"percentile_25":63503.558112170176,"percentile_50":77864.69459063392,"percentile_75":95473.55839468726}},{"job":{"id":"WAITER","title":"Waiter"},"salary_percentiles":{"percentile_25":16887.258495624723,"percentile_50":25848.553533691353,"percentile_75":39565.197628568094}},{"job":{"id":"WEB-DESIGNER","title":"Web
         Designer"},"salary_percentiles":{"percentile_25":40084.46116925613,"percentile_50":49048.160161547574,"percentile_75":60016.324157999574}},{"job":{"id":"WEB-DEVELOPER","title":"Web
         Developer"},"salary_percentiles":{"percentile_25":57185.38761202457,"percentile_50":70858.51357411596,"percentile_75":87800.90781228538}}]}'
-  recorded_at: Mon, 24 Apr 2023 16:29:48 GMT
+  recorded_at: Mon, 24 Apr 2023 16:48:32 GMT
 recorded_with: VCR 6.1.0
