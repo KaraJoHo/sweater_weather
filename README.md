@@ -109,6 +109,7 @@ _This project uses both Mapquest and WeatherAPI. Keys are free and easy to get, 
   <summary><strong>Endpoints</strong></summary>
    <br>
    <hr>
+  
    `GET /api/v1/forecast?location=denver,co`
 
    <img src=".github/docs/get_forecast.png">
