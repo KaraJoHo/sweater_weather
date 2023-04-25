@@ -90,7 +90,7 @@ _This project uses both Mapquest and WeatherAPI. Keys are free and easy to get, 
 
 4. Enter your API key in `application.yml`
    ```js
-   API_KEY = 'ENTER YOUR API KEY';
+   API_KEY = 'ENTER YOUR API KEY'
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
