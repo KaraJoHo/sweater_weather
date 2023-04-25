@@ -52,7 +52,7 @@ Sweater Weather will allow users to not only see the duration of their road trip
 
 <!-- GETTING STARTED -->
 ## Getting Started
-<p>* Before running these steps, make sure you have the correct versions of ruby and rails, and the API keys. See Configuration and Keys below *</p>
+<p>* Before running these steps, make sure you have the correct versions of ruby, rails, and the API keys. See Configuration and Keys below *</p>
 
 1. Fork and clone this repo
 `git clone git@github.com:KaraJoHo/sweater_weather.git`
@@ -63,7 +63,7 @@ Sweater Weather will allow users to not only see the duration of their road trip
 4. Run rails s to start the server
 `rails s`
 5. Open postman to test the endpoints 
-If you don't have postman, go to https://www.postman.com to install it and read about use. you can access one endpoint from your browser by searching `http://localhost:3000/api/v1/forecast?location=denver,co` <br>
+If you don't have postman, go to https://www.postman.com to install it and read about use. You can access one endpoint from your browser by searching `http://localhost:3000/api/v1/forecast?location=denver,co` <br>
 However, for the `post` requests, you will need to use postman to test those endpoints.
   
 
@@ -73,7 +73,7 @@ However, for the `post` requests, you will need to use postman to test those end
 
 ### Keys
 
-_This project uses both Mapquest and WeatherAPI. Keys are free and easy to get, and will be needed to properly run this on your local machine. See below for the links to getting your own key, and where to use it._
+_This project uses both Mapquest and WeatherAPI. Keys are free and easy to get, and will be needed to properly run this on your local machine. See the links below to get your own keys, and where/how to use them._
 
 1. Look under the getting started section for a [Weather API](https://www.weatherapi.com/docs/) key
 2. Click on sign up, in Join the Community for a [MapQuest API](https://developer.mapquest.com/documentation/) key
