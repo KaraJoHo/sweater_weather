@@ -65,10 +65,21 @@ RSpec.describe "Users" do
       error_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(error_response).to be_a(Hash)
-      expect(error_response[:errors]).to eq(["Validation failed: Email has already been taken"])
-      
+      expect(error_response[:errors]).to eq(["Validation failed: Email has already been taken"]) 
+    end
 
+    it "raises an error if a field is missing" do 
+      request_body = {
+                      "password": "password",
+                      "password_confirmation": "password"
+                    }
+      headers = {"CONTENT_TYPE" => "application/json"}
+      post "/api/v1/users", headers: headers, params: JSON.generate(request_body)
       
+      expect(response).to_not be_successful 
+      expect(response.status).to eq(404)
+      error_response = JSON.parse(response.body, symbolize_names: true)
+      expect(error_response[:errors]).to eq(["Validation failed: Email can't be blank"])
     end
   end
 
