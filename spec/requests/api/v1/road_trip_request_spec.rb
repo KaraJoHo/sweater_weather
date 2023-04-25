@@ -117,5 +117,55 @@ RSpec.describe "Road Trip Request" do
 
       expect(error[:errors]).to eq(["Key is incorrect or not present"])
     end
+
+    it "renders an error if destination is not provided" do 
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+      request_body = {
+                      "origin": "Cincinatti,OH",
+                      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+                    }
+      headers = {"CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
+      post "/api/v1/road_trip", headers: headers, params: JSON.generate(request_body)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error[:errors]).to eq(["Origin and/or destination was not provided"])
+    end
+
+    it "renders an error if origin is not provided" do 
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+      request_body = {
+                      "destination": "Cincinatti,OH",
+                      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+                    }
+      headers = {"CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
+      post "/api/v1/road_trip", headers: headers, params: JSON.generate(request_body)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error[:errors]).to eq(["Origin and/or destination was not provided"])
+    end
+
+    it "renders an error if neither origin or destination is provided" do 
+      user = User.create!(email: "user@email.com", password: "passed", api_key: "t1h2i3s4_i5s6_l7e8g9i10t11")
+      request_body = {
+                      "api_key": "t1h2i3s4_i5s6_l7e8g9i10t11"
+                    }
+      headers = {"CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
+      post "/api/v1/road_trip", headers: headers, params: JSON.generate(request_body)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error[:errors]).to eq(["Origin and/or destination was not provided"])
+    end
   end
 end

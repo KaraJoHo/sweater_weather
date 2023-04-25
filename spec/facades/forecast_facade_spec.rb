@@ -26,7 +26,10 @@
       expect(@facade.forecast_for_given_location.hourly_weather.first).to be_a(HourlyWeather)
       expect(@facade.forecast_for_given_location.hourly_weather).to be_an(Array)
       expect(@facade.forecast_for_given_location.hourly_weather.count).to eq(24)
+    end
 
+    it "has a service" do 
+      expect(@facade.weather_service).to be_a(WeatherService)
     end
   end
  end

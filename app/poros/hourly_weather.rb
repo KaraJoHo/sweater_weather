@@ -10,9 +10,4 @@ class HourlyWeather
     @condition = info[:condition][:text]
     @icon = info[:condition][:icon]
   end
-
-  def format_time 
-    d = @date_time.to_time 
-    d.strftime("%H:%M")
-  end
 end
