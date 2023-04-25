@@ -143,7 +143,7 @@ _This project uses both Mapquest and WeatherAPI. Keys are free and easy to get, 
 <!-- CONTACT -->
 ## Contact
 
-Reach out anytime on [LinkedIn](https://www.linkedin.com/in/81012911-91208/) - email@example.com
+Reach out anytime on [LinkedIn](https://www.linkedin.com/in/81012911-91208/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
