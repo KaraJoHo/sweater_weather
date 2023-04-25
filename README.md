@@ -63,7 +63,7 @@ Sweater Weather will allow users to not only see the duration of their road trip
 4. Run rails s to start the server
 `rails s`
 5. Open postman to test the endpoints 
-*If you don't have postman, go to https://www.postman.com to install it and read about use. you can access one endpoint from your browser by searching `http://localhost:3000/api/v1/forecast?location=denver,co` <br>
+If you don't have postman, go to https://www.postman.com to install it and read about use. you can access one endpoint from your browser by searching `http://localhost:3000/api/v1/forecast?location=denver,co` <br>
 However, for the `post` requests, you will need to use postman to test those endpoints.
   
 
